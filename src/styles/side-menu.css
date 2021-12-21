@@ -1,0 +1,43 @@
+ul {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+ul a {
+  width: 15em;
+  height: 2em;
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1em;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: medium;
+  color: #313233;
+}
+
+ul a:hover {
+  background-color: #f5f7f7;
+  cursor: pointer;
+}
+
+ul a:active {
+  color: white;
+  background-color: #3bb6db;
+}
+
+.side-menu-title {
+  color: #9caab5;
+  font-weight: 100;
+  font-size: small;
+  letter-spacing: 0.1em;
+}
+
+.side-menu {
+  display: flex;
+}
+
+.side-menu-group {
+  margin-right: 2em;
+}

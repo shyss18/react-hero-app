@@ -1,0 +1,38 @@
+.header {
+  padding: 0.2em;
+  background-color: #30363b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  width: 3em;
+  height: 3em;
+}
+
+.header-tour-label {
+  color: white;
+  font-weight: 500;
+}
+
+.header-of-label {
+  color: #9caab5;
+  font-weight: 500;
+}
+
+.header-hero-label {
+  color: #3bb6db;
+  font-weight: 500;
+}
+
+.header-labels {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.1em 0.5em;
+}
+
+.header-logo-group {
+  display: flex;
+  align-content: center;
+}
