@@ -4,6 +4,7 @@ import "../styles/villains.css";
 import Villain from "../models/villain";
 import { useEffect, useState } from "react";
 import VillainCard from "../components/VillainCard";
+import { Link } from "react-router-dom";
 
 const Villains = () => {
   const [villains, setVillains] = useState<Villain[]>();
@@ -41,13 +42,16 @@ const Villains = () => {
     <div className="villains">
       <div className="villains-label-group">
         <div className="villains-lable">VILLAINS</div>
-        <FontAwesomeIcon
-          icon={faPlus}
-          className="villains-button"
-          cursor={"pointer"}
-          size={"1x"}
-          color={"#9caab5"}
-        />
+        <Link to="/villains/0">
+          <FontAwesomeIcon
+            icon={faPlus}
+            className="villains-button"
+            cursor={"pointer"}
+            size={"1x"}
+            color={"#9caab5"}
+          />
+        </Link>
+
         <FontAwesomeIcon
           icon={faRedo}
           className="villains-button"

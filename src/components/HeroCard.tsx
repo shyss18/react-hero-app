@@ -1,5 +1,6 @@
 import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import Hero from "../models/hero";
 import "../styles/hero-card.css";
 
@@ -27,18 +28,20 @@ const HeroCard = (props: HeroCardProps) => {
             Delete
           </div>
         </div>
-        <div className="hero-button">
-          <FontAwesomeIcon
-            icon={faEdit}
-            cursor={"pointer"}
-            size={"1x"}
-            color={"#9caab5"}
-            id="hero-edit-image"
-          />
-          <div id="hero-edit" className="hero-button-title">
-            Edit
+        <Link to={`/heroes/${props.hero.id}`}>
+          <div className="hero-button">
+            <FontAwesomeIcon
+              icon={faEdit}
+              cursor={"pointer"}
+              size={"1x"}
+              color={"#9caab5"}
+              id="hero-edit-image"
+            />
+            <div id="hero-edit" className="hero-button-title">
+              Edit
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

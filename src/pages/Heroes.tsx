@@ -4,6 +4,7 @@ import "../styles/heroes.css";
 import { useEffect, useState } from "react";
 import Hero from "../models/hero";
 import HeroCard from "../components/HeroCard";
+import { Link } from "react-router-dom";
 
 const Heroes = () => {
   const [heroes, setHeroes] = useState<Hero[]>();
@@ -51,13 +52,16 @@ const Heroes = () => {
     <div className="heroes">
       <div className="heroes-label-group">
         <div className="heroes-lable">HEROES</div>
-        <FontAwesomeIcon
-          icon={faPlus}
-          className="heroes-button"
-          cursor={"pointer"}
-          size={"1x"}
-          color={"#9caab5"}
-        />
+        <Link to="/heroes/0">
+          <FontAwesomeIcon
+            icon={faPlus}
+            className="heroes-button"
+            cursor={"pointer"}
+            size={"1x"}
+            color={"#9caab5"}
+          />
+        </Link>
+
         <FontAwesomeIcon
           icon={faRedo}
           className="heroes-button"
