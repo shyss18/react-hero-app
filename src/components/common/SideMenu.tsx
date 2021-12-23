@@ -7,9 +7,9 @@ const SideMenu = () => {
       <div className="side-menu-group">
         <div className="side-menu-title">MENU</div>
         <ul>
-          <Link to="/heroes">Heroes</Link>
-          <Link to="/villains">Villains</Link>
-          <Link to="/about">About</Link>
+          <Link to="heroes">Heroes</Link>
+          <Link to="villains">Villains</Link>
+          <Link to="about">About</Link>
         </ul>
       </div>
     </div>

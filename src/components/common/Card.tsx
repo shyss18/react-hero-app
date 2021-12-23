@@ -9,7 +9,6 @@ interface CardProps {
   id: string;
   title: string;
   description: string;
-  editPath: string;
 }
 
 const Card = (props: CardProps) => {
@@ -41,10 +40,7 @@ const Card = (props: CardProps) => {
             onClick={handleDeleteClick}
           />
 
-          <Link
-            className="card-edit-link"
-            to={`/${props.editPath}/${props.id}`}
-          >
+          <Link className="card-edit-link" to={`${props.id}`}>
             <Button title="Edit" image={<FaEdit />} />
           </Link>
         </div>

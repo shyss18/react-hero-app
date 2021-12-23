@@ -43,7 +43,7 @@ const Villains = () => {
     <>
       <div className="villains-label-group">
         <PageTitle text="VILLAINS" />
-        <Link to="/villains/0">
+        <Link to="0">
           <TitleButton icon={<FaPlus size="20px" />} />
         </Link>
         <TitleButton icon={<FaRedo size="20px" />} />
@@ -56,7 +56,6 @@ const Villains = () => {
               id={villain.id}
               title={villain.name}
               description={villain.description}
-              editPath="villains"
             />
           );
         })}

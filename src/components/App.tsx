@@ -13,12 +13,12 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="react-hero-app" element={<Home />}>
           <Route path="heroes" element={<Heroes />} />
-          <Route path="villains" element={<Villains />} />
-          <Route path="about" element={<About />} />
           <Route path="heroes/:id" element={<HeroDetails />} />
+          <Route path="villains" element={<Villains />} />
           <Route path="villains/:id" element={<VillainDetails />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </>
