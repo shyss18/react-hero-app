@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Input from "../Input";
+import Input from "../common/Input";
 import Villain from "../../models/villain";
 import "../../styles/villain-details.css";
 import Button from "../common/Button";

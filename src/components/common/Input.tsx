@@ -1,4 +1,4 @@
-import "../styles/input.css";
+import "../../styles/input.css";
 
 interface InputProps {
   placeholder?: string;

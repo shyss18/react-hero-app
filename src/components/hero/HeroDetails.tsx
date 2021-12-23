@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Input from "../Input";
+import Input from "../common/Input";
 import Hero from "../../models/hero";
 import "../../styles/hero-details.css";
 import Button from "../common/Button";
