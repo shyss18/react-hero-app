@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  background-color: white;
+  flex-grow: 1;
+  width: 350px;
+  border: 1px solid #ebeced;
+  padding: 0.9em;
+  justify-content: center;
+}
+
+.button-title {
+  font-weight: 100;
+  font-size: medium;
+  color: #9caab5;
+  margin-left: 10px;
+}
+
+.button-image {
+  color: #9caab5;
+  cursor: pointer;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover > #button-text {
+  color: #3bb6db;
+}
+
+.button:hover > #button-image {
+  color: #3bb6db;
+}

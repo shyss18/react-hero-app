@@ -1,10 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faRedo } from "@fortawesome/free-solid-svg-icons";
-import "../styles/heroes.css";
+import "../../styles/heroes.css";
 import { useEffect, useState } from "react";
-import Hero from "../models/hero";
-import HeroCard from "../components/HeroCard";
+import Hero from "../../models/hero";
 import { Link } from "react-router-dom";
+import PageTitle from "../common/PageTitle";
+import { FaPlus, FaRedo } from "react-icons/fa";
+import TitleButton from "../common/TitleButton";
+import Card from "../common/Card";
 
 const Heroes = () => {
   const [heroes, setHeroes] = useState<Hero[]>();
@@ -49,33 +50,28 @@ const Heroes = () => {
   }, []);
 
   return (
-    <div className="heroes">
+    <>
       <div className="heroes-label-group">
-        <div className="heroes-lable">HEROES</div>
+        <PageTitle text="HEROES" />
         <Link to="/heroes/0">
-          <FontAwesomeIcon
-            icon={faPlus}
-            className="heroes-button"
-            cursor={"pointer"}
-            size={"1x"}
-            color={"#9caab5"}
-          />
+          <TitleButton icon={<FaPlus size="20px" />} />
         </Link>
-
-        <FontAwesomeIcon
-          icon={faRedo}
-          className="heroes-button"
-          cursor={"pointer"}
-          size={"1x"}
-          color={"#9caab5"}
-        />
+        <TitleButton icon={<FaRedo size="20px" />} />
       </div>
       <div>
         {heroes?.map((hero) => {
-          return <HeroCard key={hero.id.toString()} hero={hero} />;
+          return (
+            <Card
+              key={hero.id}
+              id={hero.id}
+              title={hero.name}
+              description={hero.description}
+              editPath="heroes"
+            />
+          );
         })}
       </div>
-    </div>
+    </>
   );
 };
 

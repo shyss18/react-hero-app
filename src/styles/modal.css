@@ -1,0 +1,59 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f7;
+  border: 1px solid #ebeced;
+  -webkit-box-shadow: 0 8px 6px -6px #b2b5b8;
+  -moz-box-shadow: 0 8px 6px -6px #b2b5b8;
+  box-shadow: 0 8px 6px -6px #b2b5b8;
+  border-radius: 4px;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes animatetop {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  cursor: pointer;
+  color: #30363b;
+  width: 30px;
+  height: 30px;
+  align-self: flex-end;
+}
+
+.modal-close:hover {
+  color: #3bb6db;
+}
+
+.modal-buttons {
+  display: flex;
+}
+
+.modal-content {
+  align-self: center;
+  margin: 20px 0;
+}

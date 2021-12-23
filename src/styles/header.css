@@ -13,26 +13,38 @@
 
 .header-tour-label {
   color: white;
-  font-weight: 500;
 }
 
 .header-of-label {
   color: #9caab5;
-  font-weight: 500;
 }
 
 .header-hero-label {
   color: #3bb6db;
-  font-weight: 500;
 }
 
 .header-labels {
   display: flex;
   justify-content: flex-start;
   padding: 0.1em 0.5em;
+  font-weight: 500;
 }
 
 .header-logo-group {
   display: flex;
   align-content: center;
+}
+
+.header-links {
+  margin-right: 1em;
+}
+
+.header-links-git {
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.header-links-git:hover {
+  color: #3bb6db;
 }

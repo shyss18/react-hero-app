@@ -1,0 +1,10 @@
+.title-button {
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #9caab5;
+  cursor: pointer;
+}
+
+.title-button:hover {
+  color: #3bb6db;
+}
