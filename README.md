@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# URL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is hosted by Github Pages - https://shyss18.github.io/react-hero-app/
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run deploy`
+
+Deploy application to Github Pages
 
 ### `npm start`
 
