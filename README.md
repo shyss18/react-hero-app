@@ -1,6 +1,6 @@
 # URL
 
-This project is hosted by Github Pages - https://shyss18.github.io/react-hero-app/
+This project is hosted by Github Pages - https://shyss18.github.io/react-hero-app
 
 ## Available Scripts
 
