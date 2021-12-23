@@ -1,5 +1,5 @@
-import { Link, Outlet } from "react-router-dom";
-import "../styles/side-menu.css";
+import { Link } from "react-router-dom";
+import "../../styles/side-menu.css";
 
 const SideMenu = () => {
   return (
@@ -12,8 +12,6 @@ const SideMenu = () => {
           <Link to="/about">About</Link>
         </ul>
       </div>
-
-      <Outlet />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import "../styles/header.css";
-import Logo from "../logo.svg";
+import "../../styles/header.css";
+import Logo from "../../logo.svg";
 import Links from "./Links";
 
 const Header = () => {

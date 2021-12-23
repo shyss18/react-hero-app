@@ -4,13 +4,6 @@
   border-top: 50px solid #3bb6db;
 }
 
-.villain-details-text {
-  margin-top: 10px;
-  font-weight: 100;
-  font-size: medium;
-  color: #363636;
-}
-
 .villain-details-edit-group {
   padding-top: 2em;
   padding-left: 1em;
@@ -22,41 +15,4 @@
   display: flex;
   width: 100%;
   margin-top: 20px;
-}
-
-.villain-details-button {
-  display: flex;
-  background-color: white;
-  flex-grow: 1;
-  width: 50%;
-  border: 1px solid #ebeced;
-  padding: 0.9em;
-  justify-content: center;
-}
-
-.villain-details-button:hover {
-  cursor: pointer;
-}
-
-.villain-details-button:hover > #villain-details-delete {
-  color: #3bb6db;
-}
-
-.villain-details-button:hover > #villain-details-delete-image {
-  color: #3bb6db;
-}
-
-.villain-details-button:hover > #villain-details-edit {
-  color: #3bb6db;
-}
-
-.villain-details-button:hover > #villain-details-edit-image {
-  color: #3bb6db;
-}
-
-.villain-details-button-title {
-  font-weight: 100;
-  font-size: medium;
-  color: #9caab5;
-  margin-left: 10px;
 }
