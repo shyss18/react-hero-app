@@ -6,29 +6,42 @@ import "../../styles/hero-details.css";
 import Button from "../common/Button";
 import { FaUndo, FaSave } from "react-icons/fa";
 import Label from "../common/Label";
+import { createHero, fetchHero, updateHero } from "../../server/server-fetcher";
 
 const HeroDetails = () => {
   const { id } = useParams<"id">();
   const navigate = useNavigate();
   const [hero, setHero] = useState<Hero>();
 
+  const [heroName, setHeroName] = useState<string>("");
+  const [heroDescription, setHeroDescription] = useState<string>("");
+
   useEffect(() => {
     if (id !== "0") {
-      // Fetch data
+      fetchHero(id!).then((result) => setHero(result));
     }
-
-    setHero({
-      id: "someId",
-      name: "someName",
-      description: "someDescription",
-    });
   }, [id]);
 
   const handleCancelClick = () => {
     navigate(-1);
   };
 
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
+    if (id !== "0") {
+      await updateHero({
+        id: hero?.id,
+        name: heroName ? heroName : hero?.name!,
+        description: heroDescription ? heroDescription : hero?.description!,
+      });
+    } else {
+      if (heroName && heroDescription) {
+        await createHero({
+          name: heroName,
+          description: heroDescription,
+        });
+      }
+    }
+
     navigate(-1);
   };
 
@@ -43,12 +56,20 @@ const HeroDetails = () => {
         ) : null}
 
         <Label text="name" />
-        <Input type="text" placeholder="e.g. Colleen" text={hero?.name} />
+        <Input
+          type="text"
+          placeholder="e.g. Colleen"
+          text={hero?.name}
+          onChange={(event) => {
+            setHeroName(event.currentTarget.value);
+          }}
+        />
         <Label text="description" />
         <Input
           type="text"
           placeholder="e.g. dance fight!"
           text={hero?.description}
+          onChange={(event) => setHeroDescription(event.currentTarget.value)}
         />
       </div>
       <div className="hero-details-button-group">

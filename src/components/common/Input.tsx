@@ -1,3 +1,4 @@
+import React, { ChangeEventHandler } from "react";
 import "../../styles/input.css";
 
 interface InputProps {
@@ -5,6 +6,7 @@ interface InputProps {
   type?: string;
   text?: string;
   readOnly?: boolean;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 const Input = (props: InputProps) => {
@@ -15,6 +17,7 @@ const Input = (props: InputProps) => {
       type={props.type}
       defaultValue={props.text}
       readOnly={props.readOnly}
+      onChange={props.onChange}
     />
   );
 };

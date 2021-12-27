@@ -1,5 +1,5 @@
 export default interface Villain {
-  id: string;
+  id?: string;
   name: string;
   description: string;
 }

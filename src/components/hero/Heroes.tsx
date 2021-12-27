@@ -6,48 +6,19 @@ import PageTitle from "../common/PageTitle";
 import { FaPlus, FaRedo } from "react-icons/fa";
 import TitleButton from "../common/TitleButton";
 import Card from "../common/Card";
+import * as fetchers from "../../server/server-fetcher";
+import { Type } from "../../models/type";
 
 const Heroes = () => {
   const [heroes, setHeroes] = useState<Hero[]>();
 
   useEffect(() => {
-    //TODO: Load from a server
-
-    const mockHeroes: Hero[] = [
-      {
-        id: "HeroAslaug",
-        name: "Aslaug",
-        description: "warrior queen",
-      },
-      {
-        id: "HeroBjorn",
-        name: "Bjorn Ironside",
-        description: "king of 9th century Sweden",
-      },
-      {
-        id: "HeroIvar",
-        name: "Ivar the Boneless",
-        description: "commander of the Great Heathen Army",
-      },
-      {
-        id: "HeroLagertha",
-        name: "Lagertha the Shieldmaiden",
-        description: "aka Hlaðgerðr",
-      },
-      {
-        id: "HeroRagnar",
-        name: "Ragnar Lothbrok",
-        description: "aka Ragnar Sigurdsson",
-      },
-      {
-        id: "HeroThora",
-        name: "Thora Town-hart",
-        description: "daughter of Earl Herrauðr of Götaland",
-      },
-    ];
-
-    setHeroes(mockHeroes);
+    fetchers.fetchHeroes().then((result) => setHeroes(result));
   }, []);
+
+  const handleDelete = (id: string) => {
+    setHeroes(heroes?.filter((item) => item.id !== id));
+  };
 
   return (
     <>
@@ -63,9 +34,11 @@ const Heroes = () => {
           return (
             <Card
               key={hero.id}
-              id={hero.id}
+              id={hero.id!}
               title={hero.name}
               description={hero.description}
+              type={Type.HERO}
+              onDelete={handleDelete}
             />
           );
         })}

@@ -5,6 +5,7 @@ interface ButtonProps {
   title?: string;
   image?: ReactElement;
   onClick?: React.MouseEventHandler;
+  type?: string;
 }
 
 const Button = (props: ButtonProps) => {

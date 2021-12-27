@@ -6,38 +6,21 @@ import { FaPlus, FaRedo } from "react-icons/fa";
 import PageTitle from "../common/PageTitle";
 import TitleButton from "../common/TitleButton";
 import Card from "../common/Card";
+import * as fetchers from "../../server/server-fetcher";
+import { Type } from "../../models/type";
 
 const Villains = () => {
   const [villains, setVillains] = useState<Villain[]>();
 
   useEffect(() => {
-    //TODO: Load from a server
-
-    const mockVillains: Villain[] = [
-      {
-        id: "VillainMadelyn",
-        name: "Madelyn",
-        description: "the cat whisperer",
-      },
-      {
-        id: "VillainHaley",
-        name: "Haley",
-        description: "pen wielder",
-      },
-      {
-        id: "VillainElla",
-        name: "Ella",
-        description: "fashionista",
-      },
-      {
-        id: "VillainLandon",
-        name: "Landon",
-        description: "Mandalorian mauler",
-      },
-    ];
-
-    setVillains(mockVillains);
+    fetchers.fetchVillains().then((result) => {
+      setVillains(result);
+    });
   }, []);
+
+  const handleDelete = (id: string) => {
+    setVillains(villains?.filter((item) => item.id !== id));
+  };
 
   return (
     <>
@@ -53,9 +36,11 @@ const Villains = () => {
           return (
             <Card
               key={villain.id}
-              id={villain.id}
+              id={villain.id!}
               title={villain.name}
               description={villain.description}
+              type={Type.VILLAIN}
+              onDelete={handleDelete}
             />
           );
         })}

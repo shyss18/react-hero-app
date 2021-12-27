@@ -4,11 +4,15 @@ import { FaTrash, FaEdit } from "react-icons/fa";
 import Button from "./Button";
 import { useState } from "react";
 import Modal from "./Modal";
+import * as fetchers from "../../server/server-fetcher";
+import { Type } from "../../models/type";
 
 interface CardProps {
   id: string;
   title: string;
   description: string;
+  type: Type;
+  onDelete: (id: string) => void;
 }
 
 const Card = (props: CardProps) => {
@@ -18,7 +22,17 @@ const Card = (props: CardProps) => {
     setModalState(true);
   };
 
-  const handleAgreedClick = () => {
+  const handleAgreedClick = async () => {
+    switch (props.type) {
+      case Type.HERO:
+        await fetchers.deleteHero(props.id);
+        break;
+      case Type.VILLAIN:
+        await fetchers.deleteVillain(props.id);
+        break;
+    }
+
+    props.onDelete(props.id);
     setModalState(false);
   };
 
